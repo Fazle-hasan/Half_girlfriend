@@ -1,0 +1,6 @@
+pandas
+openai
+notebook
+langchain
+langchain_ollama
+langchain-qdrant

@@ -17,7 +17,7 @@ Half Girlfriend solves this problem by providing an AI-based chatbot that behave
 ## Installation
 
 ### Prerequisites
-- Python 3.x installed
+- Python 3.11.0 installed
 - Git installed
 
 ### Steps

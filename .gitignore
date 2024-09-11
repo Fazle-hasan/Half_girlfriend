@@ -1,5 +1,7 @@
 # My ignore
 nohup.out
+Emb/
+Vector_search_RAG.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

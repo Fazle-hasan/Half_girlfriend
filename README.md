@@ -1,7 +1,7 @@
 # Half Girlfriend
 
 <p align="center">
-  <img src="Images/Display.jpg">
+  <img src="Images/Display.jpg" width="400" height="300">
 </p>
 
 Half Girlfriend is an innovative AI-powered chatbot designed to provide companionship and emotional support through lifelike conversations. This sophisticated virtual companion uses advanced language models to create personalized, engaging interactions that adapt to users' moods and conversational needs.
@@ -20,7 +20,7 @@ Half Girlfriend is an AI-powered companion designed to provide engaging, lifelik
 3. **Dynamic Conversations**: Personalizing responses to the user's needs, powered by a Retrieval-Augmented Generation (RAG) system to deliver relevant, context-aware dialogue.
 4. **Engagement in Personal Interests**: Making it easy to engage in conversations based on the user's mood or queries, ensuring they feel heard and valued.
 
-### Dataset
+## Dataset
 
 The dataset used in the **Half Girlfriend** project consists of conversational exchanges between two individuals, formatted as questions and answers. This dataset was initially web scraped by the developer and later expanded using ChatGPT and Claude to generate similar dialogue patterns, ensuring a wide variety of lifelike interactions. It contains a total of 638 records.
 

@@ -1,7 +1,7 @@
 # Half Girlfriend
 
 <p align="center">
-  <img src="Images/Display.jpg" width="400" height="300">
+  <img src="Images/Display.jpg" width="400" height="400">
 </p>
 
 Half Girlfriend is an innovative AI-powered chatbot designed to provide companionship and emotional support through lifelike conversations. This sophisticated virtual companion uses advanced language models to create personalized, engaging interactions that adapt to users' moods and conversational needs.

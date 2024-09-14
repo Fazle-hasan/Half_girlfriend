@@ -1,31 +1,43 @@
-# Half_Girlfriend
+# Half Girlfriend
 
-Half Girlfriend is a chatbot for people to talk with an LLM-based chatbot that acts like a girlfriend. The chatbot simulates human-like conversations and provides users with an emotional, personalized experience, catering to various moods and conversational needs. It helps individuals, especially boys who may feel lonely or find it difficult to talk to girls, to have a virtual companion with whom they can share their thoughts and feelings.
+<p align="center">
+  <img src="Images/Display.jpg">
+</p>
 
-## Problem Statement
-In today’s world, many boys want to talk with girls but may not have the opportunity or confidence to do so. Whether due to social or personal reasons, they often lack an outlet for emotional interaction. This absence of communication can lead to feelings of isolation and loneliness.
+Half Girlfriend is an innovative AI-powered chatbot designed to provide companionship and emotional support through lifelike conversations. This sophisticated virtual companion uses advanced language models to create personalized, engaging interactions that adapt to users' moods and conversational needs.
 
-## Solution
-Half Girlfriend solves this problem by providing an AI-based chatbot that behaves like a girlfriend, engaging in conversations with users across various emotional states. The chatbot responds in different tones, such as romantic, playful, doubting, insecure, and naughty, making the experience realistic and engaging for the user.
+Half Girlfriend aims to bridge the gap for individuals, particularly those who may struggle with social interactions or experience loneliness, by offering a safe space to express thoughts and feelings. The chatbot's empathetic responses and ability to simulate romantic interest provide users with a unique opportunity to practice communication skills and build confidence in a judgment-free environment. 
 
-## Features
-- **Emotionally Intelligent**: Responds with different emotions like romantic, playful, naughty, doubting, and insecure.
-- **Personalized Conversations**: Uses Retrieval-Augmented Generation (RAG) to provide dynamic, personalized responses based on user queries.
-- **Human-like Interaction**: Engages in natural and fluid conversations, mimicking real-life girlfriend experiences.
-- **Emotional Support**: Offers companionship to users seeking to express their feelings and thoughts.
+Whether you're seeking a friendly chat, emotional support, or simply a novel AI experience, Half Girlfriend offers an intriguing blend of technology and human-like interaction.
 
-## Installation
+## Project overview
 
-### Prerequisites
-- Python 3.11.0 installed
-- Git installed
+Half Girlfriend is an AI-powered companion designed to provide engaging, lifelike conversations tailored to offer emotional support and companionship.
 
-### Steps
+### Key Use Cases:
+1. **Companionship**: Offering warm, emotionally supportive interactions that simulate a romantic partner's presence, including playful, romantic, or intimate exchanges.
+2. **Emotional Reassurance**: Responding with empathy and simulating a range of emotions like insecurity, doubt, or confidence, helping users feel understood and supported.
+3. **Dynamic Conversations**: Personalizing responses to the user's needs, powered by a Retrieval-Augmented Generation (RAG) system to deliver relevant, context-aware dialogue.
+4. **Engagement in Personal Interests**: Making it easy to engage in conversations based on the user's mood or queries, ensuring they feel heard and valued.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/half-girlfriend-chatbot.git
-   cd half-girlfriend-chatbot
-2. **Install required dependencies**:
-    ```python
-    pip install -r requirements.txt
+### Dataset
+
+The dataset used in the **Half Girlfriend** project consists of conversational exchanges between two individuals, formatted as questions and answers. This dataset was initially web scraped by the developer and later expanded using ChatGPT and Claude to generate similar dialogue patterns, ensuring a wide variety of lifelike interactions. It contains a total of 638 records.
+
+Key features of the dataset include:
+
+- **Conversation Format**: Each record includes a question-answer pair that simulates natural dialogue between two people.
+- **Emotional Variety**: The conversations capture various emotions such as playful, romantic, insecure, and doubting tones, offering realistic interactions.
+- **Personalization**: The data is designed to adapt to different conversational moods, enabling personalized responses.
+- **Source**: The dataset is a combination of real-life web-scraped data and AI-generated content, ensuring diversity in conversation styles and topics.
+
+This dataset forms the core of the **Half Girlfriend** chatbot's Retrieval-Augmented Generation (RAG) system, driving its personalized, emotionally intelligent responses.
+
+You can find the data in [`Data/Final_data.csv`](Data/Final_data.csv).
+
+## Technologies
+
+- Python 3.11
+- Langchain and Ollama for opensource LLM
+- Qdrant for Vector search
+- Streamlit for UI

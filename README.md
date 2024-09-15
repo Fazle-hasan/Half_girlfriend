@@ -92,7 +92,7 @@ After completing the **Preparation** steps and activating your virtual environme
    ```bash
    streamlit run streamlit_app.py --server.port 8501
    ```
-### Using the Application
+## Using the Application
 
 After running Streamlit, you can access the **Half Girlfriend** application in your browser at `http://localhost:8501`. The interface will look similar to the image below:
 
@@ -103,3 +103,12 @@ Here, you can chat with **Half Girlfriend** in real-time. On the left side of th
 - **New Chat**: Clicking this button will refresh the chat history, allowing you to start a new conversation.
 - **Model Selection**: You can choose between two models, **Mistral** and **Gemma2**, using the dropdown menu. **Gemma2** is a more advanced model, offering better conversational responses and more human-like interactions compared to **Mistral**, making it ideal for more engaging and nuanced conversations.
 
+## Code
+
+The **Half Girlfriend** project contains two key Python files:
+
+1. **streamlit_app.py** [`half_girlfriend/streamlit_app.py`](half_girlfriend/streamlit_app.py):  
+   This file handles the core functionality, including the Retrieval-Augmented Generation (RAG) system, loading the database, and the Streamlit frontend for user interaction.
+
+2. **create_embedding.py** [`half_girlfriend/create_embedding.py`](half_girlfriend/create_embedding.py):  
+   This script is used to generate the vector database. You can customize it by setting the path to your CSV file and specifying the collection name you want to use for your data. It serves as the ingestion script for creating your own database from conversational data.

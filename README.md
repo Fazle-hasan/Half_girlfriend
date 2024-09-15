@@ -156,5 +156,7 @@ NON_RELEVANT - 32 (1.03 %)
 #### Using Gemma2 9B on all 3093 records
 
 RELEVANT - 1546 (50%)
+
 PARTLY_RELEVANT - 1454 (47%)
+
 NON_RELEVANT - 93 (3%)

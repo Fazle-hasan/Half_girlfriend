@@ -107,8 +107,54 @@ Here, you can chat with **Half Girlfriend** in real-time. On the left side of th
 
 The **Half Girlfriend** project contains two key Python files:
 
-1. **streamlit_app.py** [`half_girlfriend/streamlit_app.py`](half_girlfriend/streamlit_app.py):  
+1. [`Streamlit_app.py`](half_girlfriend/streamlit_app.py):  
    This file handles the core functionality, including the Retrieval-Augmented Generation (RAG) system, loading the database, and the Streamlit frontend for user interaction.
 
-2. **create_embedding.py** [`half_girlfriend/create_embedding.py`](half_girlfriend/create_embedding.py):  
+2. [`Create_embedding.py`](half_girlfriend/create_embedding.py):  
    This script is used to generate the vector database. You can customize it by setting the path to your CSV file and specifying the collection name you want to use for your data. It serves as the ingestion script for creating your own database from conversational data.
+
+## Experiments Module
+
+Our Experiments module consists of several notebooks located in the Notebooks folder:
+
+1. [`Data_creation.ipynb`](Notebooks/Data_creation.ipynb): Loads data from CSV, removes duplicate values, processes the data, and stores the results in a new CSV file.
+
+2. [`Create_Embed.ipynb`](Notebooks/Create_Embed.ipynb): Creates and stores embeddings using the Mistral model in the Qdrant vector database, utilizing the CSV file to populate the database.
+
+3. [`Evaluation_data.ipynb`](Notebooks/Evaluation_data.ipynb): Generates the ground truth dataset for retrieval evaluation.
+
+4. [`Min_search_RAG.ipynb`](Notebooks/Min_search_RAG.ipynb): Implements and evaluates a RAG system using min search on the evaluation dataset.
+
+5. [`Vector_search_RAG.ipynb`](Notebooks/Vector_search_RAG.ipynb): Implements and evaluates a RAG system using vector search on the evaluation dataset.
+
+6. [`History_aware_Model.ipynb`](Notebooks/History_aware_Model.ipynb): Develops a context-aware RAG system.
+
+### Retrieval evaluation
+
+#### Using Min search
+
+- Hit rate: 60.36%
+- MRR: 39.35%
+
+#### Using Vector search
+
+- Hit rate: 98%
+- MRR: 49%
+
+### RAG flow evaluation
+
+I used the LLM-as-a-Judge metric to evaluate the quality of our RAG flow.
+
+#### Using Mistral 7B on all 3093 records
+
+RELEVANT - 626 (20.23 %)
+
+PARTLY_RELEVANT - 2435 (78.72 %)
+
+NON_RELEVANT - 32 (1.03 %)
+
+#### Using Gemma2 9B on all 3093 records
+
+RELEVANT - 1546 (50%)
+PARTLY_RELEVANT - 1454 (47%)
+NON_RELEVANT - 93 (3%)

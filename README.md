@@ -4,9 +4,9 @@
   <img src="Images/Display.jpg" width="400" height="400">
 </p>
 
-Half Girlfriend is an innovative AI-powered chatbot designed to provide companionship and emotional support through lifelike conversations. This sophisticated virtual companion uses advanced language models to create personalized, engaging interactions that adapt to users' moods and conversational needs.
+**Half Girlfriend** is an AI-powered chatbot designed to provide companionship and emotional support through lifelike conversations. It uses advanced language models to create personalized interactions that adapt to users' moods and needs.
 
-Half Girlfriend aims to bridge the gap for individuals, particularly those who may struggle with social interactions or experience loneliness, by offering a safe space to express thoughts and feelings. The chatbot's empathetic responses and ability to simulate romantic interest provide users with a unique opportunity to practice communication skills and build confidence in a judgment-free environment. 
+The chatbot bridges the gap for individuals who may struggle with social interactions or feel lonely. By offering empathetic, romantic responses, it helps users practice communication skills and build confidence in a safe, judgment-free environment.
 
 Whether you're seeking a friendly chat, emotional support, or simply a novel AI experience, Half Girlfriend offers an intriguing blend of technology and human-like interaction.
 
@@ -27,6 +27,7 @@ The dataset used in the **Half Girlfriend** project consists of conversational e
 Key features of the dataset include:
 
 - **Conversation Format**: Each record includes a question-answer pair that simulates natural dialogue between two people.
+- **Conversation Format**: Each record includes a question-answer pair that simulates natural dialogue between two people.
 - **Emotional Variety**: The conversations capture various emotions such as playful, romantic, insecure, and doubting tones, offering realistic interactions.
 - **Personalization**: The data is designed to adapt to different conversational moods, enabling personalized responses.
 - **Source**: The dataset is a combination of real-life web-scraped data and AI-generated content, ensuring diversity in conversation styles and topics.
@@ -38,6 +39,67 @@ You can find the data in [`Data/Final_data.csv`](Data/Final_data.csv).
 ## Technologies
 
 - Python 3.11
-- Langchain and Ollama for opensource LLM
-- Qdrant for Vector search
+- Langchain
+- Ollama for opensource LLM
+- Qdrant as Vector Database
 - Streamlit for UI
+
+## Preparation
+
+To set up the **Half Girlfriend** project, follow these steps:
+
+1. **Install Ollama**  
+   Download and install Ollama from their official website: [Ollama Download](https://ollama.com/download).
+
+2. **Verify Ollama Installation**  
+   Once installed, check if Ollama is working by running the following command in your terminal:
+   ```bash
+   ollama -v
+   ```
+
+3. **Pull Mistral Model**  
+   Pull the **Mistral 7B** model, a highly efficient 7-billion parameter model designed for natural language understanding and generation:
+   ```bash
+   ollama pull mistral
+   ```
+
+4. **Pull Gemma2 Model**  
+   Pull the **Gemma2 9B** model, a powerful 9-billion parameter model that excels in dialogue and conversational tasks:
+   ```bash
+   ollama pull gemma2
+   ```
+
+5. **Set Up Virtual Environment**  
+   Create a virtual environment and install dependencies from the `requirements.txt` file:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # For Windows, use `venv\Scripts\activate`
+   pip install -r requirements.txt
+   ```
+
+## Running the Application
+
+After completing the **Preparation** steps and activating your virtual environment, follow these steps to run the **Half Girlfriend** application:
+
+1. **Navigate to the Project Folder**  
+   Change your directory to the `half_girlfriend` folder:
+   ```bash
+   cd half_girlfriend
+   ```
+
+2. **Run the Application**  
+   Start the Streamlit app by running the following command:
+   ```bash
+   streamlit run streamlit_app.py --server.port 8501
+   ```
+### Using the Application
+
+After running Streamlit, you can access the **Half Girlfriend** application in your browser at `http://localhost:8501`. The interface will look similar to the image below:
+
+![Chat Interface](Images/Output.jpg)
+
+Here, you can chat with **Half Girlfriend** in real-time. On the left side of the screen, you'll find the following features:
+
+- **New Chat**: Clicking this button will refresh the chat history, allowing you to start a new conversation.
+- **Model Selection**: You can choose between two models, **Mistral** and **Gemma2**, using the dropdown menu. **Gemma2** is a more advanced model, offering better conversational responses and more human-like interactions compared to **Mistral**, making it ideal for more engaging and nuanced conversations.
+

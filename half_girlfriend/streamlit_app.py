@@ -9,11 +9,17 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
 from ollama import Client
 import os
-import msvcrt
 import tempfile
 
-# Initialize Qdrant client with locking for Windows
-class WindowsLockedQdrantClient:
+try:
+    import fcntl
+    WINDOWS = False
+except ImportError:
+    import msvcrt
+    WINDOWS = True
+
+# Cross-platform locked Qdrant client
+class LockedQdrantClient:
     def __init__(self, path):
         self.path = path
         self.lock_file = os.path.join(tempfile.gettempdir(), "qdrant_lock")
@@ -21,13 +27,18 @@ class WindowsLockedQdrantClient:
         self.lock_handle = None
 
     def __enter__(self):
-        while True:
-            try:
-                self.lock_handle = open(self.lock_file, 'w')
-                msvcrt.locking(self.lock_handle.fileno(), msvcrt.LK_NBLCK, 1)
-                break
-            except IOError:
-                time.sleep(0.1)
+        if WINDOWS:
+            while True:
+                try:
+                    self.lock_handle = open(self.lock_file, 'w')
+                    msvcrt.locking(self.lock_handle.fileno(), msvcrt.LK_NBLCK, 1)
+                    break
+                except IOError:
+                    time.sleep(0.1)
+        else:
+            self.lock_handle = open(self.lock_file, 'w')
+            fcntl.flock(self.lock_handle, fcntl.LOCK_EX)
+        
         self.client = QdrantClient(path=self.path)
         return self.client
 
@@ -35,13 +46,19 @@ class WindowsLockedQdrantClient:
         if self.client:
             self.client.close()
         if self.lock_handle:
-            msvcrt.locking(self.lock_handle.fileno(), msvcrt.LK_UNLCK, 1)
+            if WINDOWS:
+                msvcrt.locking(self.lock_handle.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(self.lock_handle, fcntl.LOCK_UN)
             self.lock_handle.close()
-            os.remove(self.lock_file)
+            try:
+                os.remove(self.lock_file)
+            except OSError:
+                pass  # Another instance might have already removed the file
 
-# Use the WindowsLockedQdrantClient in your functions
+# Use the LockedQdrantClient in your functions
 def qdrant_search(query):
-    with WindowsLockedQdrantClient("../Data/Emb") as qclient:
+    with LockedQdrantClient("../Data/Emb") as qclient:
         que_emb = get_embedding_mis(query)
         results = qclient.query_points(
             collection_name=collectionName,
@@ -133,7 +150,6 @@ def main():
         with st.chat_message("ai"):
             with st.spinner("Thinking..."):
                 response = rag(user_input, model)
-                print(response)
             st.write(response)
 
 if __name__ == "__main__":

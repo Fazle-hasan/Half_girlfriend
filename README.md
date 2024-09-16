@@ -72,6 +72,7 @@ To set up the **Half Girlfriend** project, follow these steps:
 5. **Set Up Virtual Environment**  
    Create a virtual environment and install dependencies from the `requirements.txt` file:
    ```bash
+   git clone https://github.com/Fazle-hasan/Half_girlfriend.git
    python3 -m venv venv
    source venv/bin/activate  # For Windows, use `venv\Scripts\activate`
    pip install -r requirements.txt

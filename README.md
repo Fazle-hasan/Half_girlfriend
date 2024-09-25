@@ -49,9 +49,8 @@ You can find the data in [`Data/Final_data.csv`](Data/Final_data.csv).
 To set up the **Half Girlfriend** project, follow these steps:
 
 1. **Install Ollama**  
-   Download and install Ollama from their official website: [Ollama Download](https://ollama.com/download).
-   
-   Ensure you install Ollama version 0.1.47 or higher, as Gemma2 requires this version.
+   - Download and install Ollama from their official website: [Ollama Download](https://ollama.com/download).
+   - Ensure you install Ollama version 0.1.47 or higher, as Gemma2 requires this version.
 
 3. **Verify Ollama Installation**  
    Once installed, check if Ollama is working by running the following command in your terminal:

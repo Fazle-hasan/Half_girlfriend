@@ -50,26 +50,28 @@ To set up the **Half Girlfriend** project, follow these steps:
 
 1. **Install Ollama**  
    Download and install Ollama from their official website: [Ollama Download](https://ollama.com/download).
+   
+   Ensure you install Ollama version 0.1.47 or higher, as Gemma2 requires this version.
 
-2. **Verify Ollama Installation**  
+3. **Verify Ollama Installation**  
    Once installed, check if Ollama is working by running the following command in your terminal:
    ```bash
    ollama -v
    ```
 
-3. **Pull Mistral Model**  
+4. **Pull Mistral Model**  
    Pull the **Mistral 7B** model, a highly efficient 7-billion parameter model designed for natural language understanding and generation:
    ```bash
    ollama pull mistral
    ```
 
-4. **Pull Gemma2 Model**  
+5. **Pull Gemma2 Model**  
    Pull the **Gemma2 9B** model, a powerful 9-billion parameter model that excels in dialogue and conversational tasks:
    ```bash
    ollama pull gemma2
    ```
 
-5. **Set Up Virtual Environment**  
+6. **Set Up Virtual Environment**  
    Create a virtual environment and install dependencies from the `requirements.txt` file:
    ```bash
    git clone https://github.com/Fazle-hasan/Half_girlfriend.git

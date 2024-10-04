@@ -162,3 +162,7 @@ RELEVANT - 1546 (50%)
 PARTLY_RELEVANT - 1454 (47%)
 
 NON_RELEVANT - 93 (3%)
+
+#### Future scope
+Add voice assistant into it for conversation. we can use the below models 
+- https://huggingface.co/openai/whisper-large-v3-turbo
